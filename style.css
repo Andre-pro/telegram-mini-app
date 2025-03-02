@@ -45,16 +45,18 @@ td {
   border-bottom: 1px solid #ddd;
   color: #333;
   font-size: 1rem;
+  vertical-align: middle; /* Выравниваем содержимое по вертикали по центру */
 }
 
 /* Фотографии игроков */
 .player-photo {
-  width: 40px; /* Уменьшаем размер фотографии */
-  height: 40px; /* Уменьшаем размер фотографии */
-  border-radius: 50%; /* Делаем фотографию круглой */
-  margin-right: 10px; /* Отступ справа от фотографии */
-  object-fit: cover; /* Чтобы фотография не искажалась */
-  border: 2px solid #6200ea; /* Добавляем рамку вокруг фотографии */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+  border: 2px solid #6200ea;
+  vertical-align: middle; /* Выравниваем фотографию по вертикали по центру */
 }
 
 /* Чередование цветов строк */
@@ -74,7 +76,7 @@ tr:nth-child(even) {
   }
 
   .player-photo {
-    width: 30px; /* Уменьшаем размер для мобильных */
-    height: 30px; /* Уменьшаем размер для мобильных */
+    width: 30px;
+    height: 30px;
   }
 }
