@@ -48,6 +48,12 @@ td {
   vertical-align: middle; /* Выравниваем содержимое по вертикали по центру */
 }
 
+/* Контейнер для фотографии и имени */
+.player-info {
+  display: flex;
+  align-items: center; /* Выравниваем элементы по центру вертикально */
+}
+
 /* Фотографии игроков */
 .player-photo {
   width: 40px;
@@ -56,7 +62,6 @@ td {
   margin-right: 10px;
   object-fit: cover;
   border: 2px solid #6200ea;
-  vertical-align: middle; /* Выравниваем фотографию по вертикали по центру */
 }
 
 /* Чередование цветов строк */
