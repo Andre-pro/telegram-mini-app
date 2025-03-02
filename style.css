@@ -3,10 +3,10 @@ body {
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
   margin: 0;
-  padding: 20px;
+  padding: 10px 20px; /* Уменьшаем отступы сверху и снизу */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Поднимаем таблицу вверх */
   align-items: center;
   min-height: 100vh;
 }
@@ -16,7 +16,7 @@ h1 {
   text-align: center;
   color: #333;
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Уменьшаем отступ снизу */
 }
 
 /* Таблица */
@@ -28,6 +28,7 @@ table {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
+  margin-top: 10px; /* Уменьшаем отступ сверху */
 }
 
 /* Заголовки таблицы */
@@ -54,6 +55,11 @@ td {
   align-items: center; /* Выравниваем элементы по центру вертикально */
 }
 
+/* Текст рядом с фотографией */
+.player-info span {
+  margin-top: 2px; /* Поднимаем текст выше */
+}
+
 /* Фотографии игроков */
 .player-photo {
   width: 40px;
@@ -61,7 +67,6 @@ td {
   border-radius: 50%;
   margin-right: 10px;
   object-fit: cover;
-  border: 2px solid #6200ea;
 }
 
 /* Чередование цветов строк */
