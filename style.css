@@ -1,24 +1,65 @@
+/* Основные стили */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
   }
   
+  /* Заголовок */
   h1 {
     text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
   
+  /* Таблица */
   table {
     width: 100%;
+    max-width: 600px;
     border-collapse: collapse;
-    margin-top: 20px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
   }
   
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
+  /* Заголовки таблицы */
   th {
-    background-color: #f2f2f2;
+    background-color: #6200ea;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+  }
+  
+  /* Ячейки таблицы */
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    font-size: 1rem;
+  }
+  
+  /* Чередование цветов строк */
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Стили для мобильных устройств */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    th, td {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
   }
