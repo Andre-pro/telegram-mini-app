@@ -1,65 +1,79 @@
 /* Основные стили */
 body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  /* Заголовок */
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Заголовок */
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Таблица */
+table {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Заголовки таблицы */
+th {
+  background-color: #6200ea;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+/* Ячейки таблицы */
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Фотографии игроков */
+.player-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Делаем фотографию круглой */
+  margin-right: 10px;
+  object-fit: cover; /* Чтобы фотография не искажалась */
+}
+
+/* Чередование цветов строк */
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 600px) {
   h1 {
-    text-align: center;
-    color: #333;
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
   }
-  
-  /* Таблица */
-  table {
-    width: 100%;
-    max-width: 600px;
-    border-collapse: collapse;
-    background: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
+
+  th, td {
+    padding: 10px;
+    font-size: 0.9rem;
   }
-  
-  /* Заголовки таблицы */
-  th {
-    background-color: #6200ea;
-    color: white;
-    padding: 12px;
-    text-align: left;
-    font-size: 1rem;
+
+  .player-photo {
+    width: 30px;
+    height: 30px;
   }
-  
-  /* Ячейки таблицы */
-  td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    color: #333;
-    font-size: 1rem;
-  }
-  
-  /* Чередование цветов строк */
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  /* Стили для мобильных устройств */
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 1.5rem;
-    }
-  
-    th, td {
-      padding: 10px;
-      font-size: 0.9rem;
-    }
-  }
+}
