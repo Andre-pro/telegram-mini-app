@@ -1,6 +1,6 @@
 const SPREADSHEET_ID = '1NdOcwBOZ0jIrPI2le4liVn2K67S-BzDaZhLfBA0WDe4'; // Ваш ID таблицы
 const API_KEY = 'AIzaSyAXf9YwZpl_geOUfPAWKbIFdNMAKCxM8LA'; // Ваш API ключ
-const RANGE = 'Sheet1!A1:B'; // Диапазон данных
+const RANGE = 'Sheet1!A1:C'; // Диапазон данных
 
 // Функция для получения данных из Google Таблицы
 async function fetchData() {
