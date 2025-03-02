@@ -28,7 +28,7 @@ function renderTable(data) {
       <td>
         <div class="player-info">
           <img src="${row[2]}" alt="${row[0]}" class="player-photo">
-          ${row[0]}
+          <span>${row[0]}</span>
         </div>
       </td>
       <td>${row[1]}</td>
