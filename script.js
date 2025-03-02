@@ -26,8 +26,10 @@ function renderTable(data) {
   tbody.innerHTML = data.map(row => `
     <tr>
       <td>
-        <img src="${row[2]}" alt="${row[0]}" class="player-photo">
-        ${row[0]}
+        <div class="player-info">
+          <img src="${row[2]}" alt="${row[0]}" class="player-photo">
+          ${row[0]}
+        </div>
       </td>
       <td>${row[1]}</td>
     </tr>
