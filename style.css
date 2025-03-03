@@ -3,7 +3,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
   margin: 0;
-  padding: 10px 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -14,113 +14,51 @@ body {
 h1 {
   text-align: center;
   color: #333;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
-/* Стили для таблицы на index.html */
-table {
-  width: 100%;
-  max-width: 600px;
-  border-collapse: collapse;
-  background: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 10px;
-}
-
-th, td {
-  padding: 12px;
-  border-bottom: 1px solid #ddd;
-  color: #333;
-  font-size: 1rem;
-  vertical-align: middle;
-}
-
-th {
-  background-color: #6200ea;
-  color: white;
-}
-
-.player-info {
-  display: flex;
-  align-items: center;
-}
-
-.player-photo {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-  object-fit: cover;
-}
-
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-/* Стили для кнопки "Добавить игру" */
-#add-game-button {
-  display: inline-block;
-  background-color: #6200ea;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-  text-align: center;
-  text-decoration: none;
-  margin-top: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
-}
-
-#add-game-button:hover {
-  background-color: #3700b3;
-}
-
-/* Стили для страницы add-game.html */
+/* Контейнер для команд */
 .teams-container {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 800px;
+  flex-direction: column;
   gap: 20px;
+  width: 100%;
+  max-width: 400px;
 }
 
+/* Стили для каждой команды */
 .team {
   background: white;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 48%;
   text-align: center;
 }
 
 .team h2 {
   color: #6200ea;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
 }
 
+/* Кнопка добавления игрока */
 .add-player {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-color: #6200ea;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin: 0 auto 20px;
+  margin: 0 auto 15px;
   transition: background-color 0.3s ease;
 }
 
 .add-player span {
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -128,12 +66,14 @@ tr:nth-child(even) {
   background-color: #3700b3;
 }
 
+/* Выбранные игроки */
 .selected-players {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+/* Стили для модального окна */
 .modal {
   display: none;
   position: fixed;
@@ -148,19 +88,20 @@ tr:nth-child(even) {
 
 .modal-content {
   background: white;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   width: 90%;
-  max-width: 500px;
+  max-width: 300px;
   text-align: center;
 }
 
 .close {
   float: right;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
 }
 
+/* Список игроков в модальном окне */
 .players-list {
   display: flex;
   flex-wrap: wrap;
@@ -176,24 +117,21 @@ tr:nth-child(even) {
 }
 
 .player-item img {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .player-item span {
   margin-top: 5px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
-/* Адаптивность */
-@media (max-width: 600px) {
-  .teams-container {
-    flex-direction: column;
-  }
-
-  .team {
-    width: 100%;
-  }
+/* Удаление игрока */
+.remove-player {
+  color: red;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-top: 5px;
 }
