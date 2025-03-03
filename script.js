@@ -1,6 +1,6 @@
 const SPREADSHEET_ID = '1NdOcwBOZ0jIrPI2le4liVn2K67S-BzDaZhLfBA0WDe4'; // Ваш ID таблицы
 const API_KEY = 'AIzaSyAXf9YwZpl_geOUfPAWKbIFdNMAKCxM8LA'; // Ваш API ключ
-const RANGE = 'Sheet1!A1:D'; // Новый диапазон данных
+const RANGE = 'Sheet1!A1:D'; // Новый диапазон данных (добавили столбец №)
 
 async function fetchData() {
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
