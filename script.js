@@ -1,6 +1,7 @@
 const SPREADSHEET_ID = '1NdOcwBOZ0jIrPI2le4liVn2K67S-BzDaZhLfBA0WDe4'; // Ваш ID таблицы
 const API_KEY = 'AIzaSyAXf9YwZpl_geOUfPAWKbIFdNMAKCxM8LA'; // Ваш API ключ
 const RANGE = 'Sheet1!A1:D'; // Диапазон данных
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxuokaz58CYIZUjoWueO7KdzN8d6w-PwM-yeXqD1xos6o0rJ0PB1Aj8H_qqJN_lneP2/exec'; // Ваш Google Apps Script URL
 
 // Функция для загрузки данных из Google Sheets
 async function fetchData() {
@@ -163,7 +164,7 @@ if (document.querySelector('#add-team1')) {
   });
 
   // Подтверждение результата
-  submitResult.addEventListener('click', () => {
+  submitResult.addEventListener('click', async () => {
     const score = document.getElementById('score').value;
     const winner = document.querySelector('input[name="winner"]:checked');
 
@@ -172,8 +173,35 @@ if (document.querySelector('#add-team1')) {
       return;
     }
 
-    // Здесь можно добавить логику для обновления рейтинга
-    alert(`Счет: ${score}, Победитель: ${winner.value === 'team1' ? 'Команда 1' : 'Команда 2'}`);
-    scoreModal.style.display = 'none';
+    // Формируем данные для отправки
+    const data = {
+      player1Team1: team1Players[0][1], // Имя первого игрока команды 1
+      player2Team1: team1Players[1][1], // Имя второго игрока команды 1
+      player1Team2: team2Players[0][1], // Имя первого игрока команды 2
+      player2Team2: team2Players[1][1], // Имя второго игрока команды 2
+      score: score, // Счет
+      winner: winner.value === 'team1' ? 'Команда 1' : 'Команда 2' // Победитель
+    };
+
+    // Отправляем данные в Google Apps Script
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert('Результат успешно отправлен!');
+        scoreModal.style.display = 'none';
+      } else {
+        alert('Ошибка при отправке данных');
+      }
+    } catch (error) {
+      console.error('Ошибка:', error);
+      alert('Ошибка при отправке данных');
+    }
   });
 }
