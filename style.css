@@ -47,8 +47,9 @@ th:first-child {
 
 /* Рейтинг */
 th:nth-child(3) {
-  padding-left: 30px; /* Сдвигаем "Рейтинг" левее */
+  padding-left: 20px; /* Сдвигаем "Рейтинг" левее */
   text-align: center; /* Центрируем текст */
+  transform: translateX(-50%); /* Сдвигаем текст влево на половину его ширины */
 }
 
 /* Ячейки таблицы */
@@ -64,6 +65,11 @@ td {
 td:first-child {
   font-weight: bold; /* Делаем номер жирным */
   text-align: center; /* Выравниваем по центру */
+}
+
+/* Рейтинг */
+td:nth-child(3) {
+  text-align: center; /* Центрируем числа в столбце */
 }
 
 /* Контейнер для фотографии и имени */
