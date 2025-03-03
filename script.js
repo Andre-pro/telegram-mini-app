@@ -18,38 +18,6 @@ async function fetchData() {
   }
 }
 
-// Логика для страницы index.html
-if (document.querySelector('#rating-table')) {
-  async function renderTable(data) {
-    const tbody = document.querySelector('#rating-table tbody');
-    if (data.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="4">Данные не найдены</td></tr>';
-      return;
-    }
-    tbody.innerHTML = data.map(row => `
-      <tr>
-        <td>${row[0]}</td> <!-- Номер игрока -->
-        <td>
-          <div class="player-info">
-            <img src="${row[3]}" alt="${row[1]}" class="player-photo">
-            <span>${row[1]}</span>
-          </div>
-        </td>
-        <td>${row[2]}</td> <!-- Рейтинг игрока -->
-      </tr>
-    `).join('');
-  }
-
-  async function init() {
-    const data = await fetchData();
-    renderTable(data);
-  }
-
-  init();
-
-  document.getElementById('refresh-button')?.addEventListener('click', init);
-}
-
 // Логика для страницы add-game.html
 if (document.querySelector('#add-team1')) {
   let selectedTeam = null;
@@ -64,13 +32,21 @@ if (document.querySelector('#add-team1')) {
 
   // Открытие модального окна для выбора игроков
   addTeam1Button.addEventListener('click', () => {
-    selectedTeam = 1;
-    openModal();
+    if (team1Players.length < 2) {
+      selectedTeam = 1;
+      openModal();
+    } else {
+      alert('В команде 1 уже 2 игрока');
+    }
   });
 
   addTeam2Button.addEventListener('click', () => {
-    selectedTeam = 2;
-    openModal();
+    if (team2Players.length < 2) {
+      selectedTeam = 2;
+      openModal();
+    } else {
+      alert('В команде 2 уже 2 игрока');
+    }
   });
 
   // Закрытие модального окна
@@ -116,11 +92,23 @@ if (document.querySelector('#add-team1')) {
   // Рендер выбранных игроков
   function renderSelectedPlayers(containerId, players) {
     const container = document.getElementById(containerId);
-    container.innerHTML = players.map(player => `
+    container.innerHTML = players.map((player, index) => `
       <div class="player-item">
         <img src="${player[3]}" alt="${player[1]}">
         <span>${player[1]}</span>
+        <span class="remove-player" onclick="removePlayer(${index}, '${containerId}')">Удалить</span>
       </div>
     `).join('');
   }
+
+  // Удаление игрока
+  window.removePlayer = function (index, containerId) {
+    if (containerId === 'team1-players') {
+      team1Players.splice(index, 1);
+      renderSelectedPlayers('team1-players', team1Players);
+    } else if (containerId === 'team2-players') {
+      team2Players.splice(index, 1);
+      renderSelectedPlayers('team2-players', team2Players);
+    }
+  };
 }
