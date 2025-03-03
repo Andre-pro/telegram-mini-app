@@ -18,7 +18,70 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Контейнер для команд */
+/* Стили для таблицы на index.html */
+table {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+th {
+  background-color: #6200ea;
+  color: white;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+}
+
+.player-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Стили для кнопки "Добавить игру" */
+#add-game-button {
+  display: inline-block;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+#add-game-button:hover {
+  background-color: #3700b3;
+}
+
+/* Стили для страницы add-game.html */
 .teams-container {
   display: flex;
   flex-direction: column;
@@ -27,7 +90,6 @@ h1 {
   max-width: 400px;
 }
 
-/* Стили для каждой команды */
 .team {
   background: white;
   padding: 15px;
@@ -69,8 +131,9 @@ h1 {
 /* Выбранные игроки */
 .selected-players {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
+  justify-content: center;
 }
 
 /* Стили для модального окна */
@@ -134,4 +197,39 @@ h1 {
   font-size: 0.8rem;
   cursor: pointer;
   margin-top: 5px;
+}
+
+/* Кнопка "Внести счет" */
+#submit-score-button {
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+#submit-score-button:hover {
+  background-color: #3700b3;
+}
+
+/* Кнопка "Назад к рейтингу" */
+#back-button {
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#back-button:hover {
+  background-color: #3700b3;
 }
