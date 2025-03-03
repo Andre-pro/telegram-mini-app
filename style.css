@@ -3,10 +3,10 @@ body {
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
   margin: 0;
-  padding: 10px 20px; /* Уменьшаем отступы сверху и снизу */
+  padding: 10px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Поднимаем таблицу вверх */
+  justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
 }
@@ -16,7 +16,7 @@ h1 {
   text-align: center;
   color: #333;
   font-size: 2rem;
-  margin-bottom: 10px; /* Уменьшаем отступ снизу */
+  margin-bottom: 10px;
 }
 
 /* Таблица */
@@ -28,7 +28,7 @@ table {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
-  margin-top: 10px; /* Уменьшаем отступ сверху */
+  margin-top: 10px;
 }
 
 /* Заголовки таблицы */
@@ -46,18 +46,24 @@ td {
   border-bottom: 1px solid #ddd;
   color: #333;
   font-size: 1rem;
-  vertical-align: middle; /* Выравниваем содержимое по вертикали по центру */
+  vertical-align: middle;
+}
+
+/* Номер игрока */
+td:first-child {
+  font-weight: bold; /* Делаем номер жирным */
+  text-align: center; /* Выравниваем по центру */
 }
 
 /* Контейнер для фотографии и имени */
 .player-info {
   display: flex;
-  align-items: center; /* Выравниваем элементы по центру вертикально */
+  align-items: center;
 }
 
 /* Текст рядом с фотографией */
 .player-info span {
-  margin-top: 2px; /* Поднимаем текст выше */
+  margin-top: 2px;
 }
 
 /* Фотографии игроков */
