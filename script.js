@@ -64,7 +64,7 @@ if (document.querySelector('#add-team1')) {
   const submitScoreButton = document.getElementById('submit-score-button');
   const scoreModal = document.getElementById('score-modal');
   const closeScoreModal = scoreModal.querySelector('.close');
-  const submitScore = document.getElementById('submit-score');
+  const submitResult = document.getElementById('submit-result');
 
   // Открытие модального окна для выбора игроков
   addTeam1Button.addEventListener('click', () => {
@@ -162,18 +162,18 @@ if (document.querySelector('#add-team1')) {
     scoreModal.style.display = 'none';
   });
 
-  // Подтверждение счета
-  submitScore.addEventListener('click', () => {
-    const team1Score = document.getElementById('team1-score').value;
-    const team2Score = document.getElementById('team2-score').value;
+  // Подтверждение результата
+  submitResult.addEventListener('click', () => {
+    const score = document.getElementById('score').value;
+    const winner = document.querySelector('input[name="winner"]:checked');
 
-    if (team1Score === '' || team2Score === '') {
-      alert('Введите счет для обеих команд');
+    if (!score || !winner) {
+      alert('Заполните счет и выберите победителя');
       return;
     }
 
     // Здесь можно добавить логику для обновления рейтинга
-    alert(`Счет: Команда 1 - ${team1Score}, Команда 2 - ${team2Score}`);
+    alert(`Счет: ${score}, Победитель: ${winner.value === 'team1' ? 'Команда 1' : 'Команда 2'}`);
     scoreModal.style.display = 'none';
   });
 }
