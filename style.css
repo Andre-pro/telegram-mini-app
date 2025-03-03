@@ -33,22 +33,23 @@ table {
 
 /* Заголовки таблицы */
 th {
-  background-color: #6200ea; /* Фиолетовый цвет */
+  background-color: #6200ea;
   color: white;
   padding: 12px;
   font-size: 1rem;
-  text-align: left; /* Выравниваем текст по левому краю */
+  text-align: left;
 }
 
 /* Номер игрока */
 th:first-child {
-  text-align: center; /* Центрируем номер */
+  text-align: center;
 }
 
 /* Рейтинг */
 th:nth-child(3) {
-  padding-left: 0px; /* Сдвигаем "Рейтинг" левее */
-  text-align: center; /* Центрируем текст */
+  padding-left: 20px;
+  text-align: center;
+  transform: translateX(-50%);
 }
 
 /* Ячейки таблицы */
@@ -57,13 +58,18 @@ td {
   border-bottom: 1px solid #ddd;
   color: #333;
   font-size: 1rem;
-  vertical-align: middle; /* Выравниваем содержимое по вертикали по центру */
+  vertical-align: middle;
 }
 
 /* Номер игрока */
 td:first-child {
-  font-weight: bold; /* Делаем номер жирным */
-  text-align: center; /* Выравниваем по центру */
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Рейтинг */
+td:nth-child(3) {
+  text-align: center;
 }
 
 /* Контейнер для фотографии и имени */
@@ -89,6 +95,69 @@ td:first-child {
 /* Чередование цветов строк */
 tr:nth-child(even) {
   background-color: #f9f9f9;
+}
+
+/* Кнопка "Добавить игру" */
+#add-game-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#add-game-button:hover {
+  background-color: #3700b3;
+}
+
+/* Форма для добавления игры */
+#add-game-form {
+  display: none; /* Скрываем форму по умолчанию */
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+#add-game-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#add-game-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#add-game-form select,
+#add-game-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#add-game-form button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#add-game-form button:hover {
+  background-color: #3700b3;
 }
 
 /* Стили для мобильных устройств */
