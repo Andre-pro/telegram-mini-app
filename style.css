@@ -11,15 +11,14 @@ body {
   min-height: 100vh;
 }
 
-/* Заголовок */
 h1 {
   text-align: center;
   color: #333;
   font-size: 2rem;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-/* Таблица */
+/* Стили для таблицы на index.html */
 table {
   width: 100%;
   max-width: 600px;
@@ -31,53 +30,24 @@ table {
   margin-top: 10px;
 }
 
-/* Заголовки таблицы */
-th {
-  background-color: #6200ea; /* Фиолетовый цвет */
-  color: white;
-  padding: 12px;
-  font-size: 1rem;
-  text-align: left; /* Выравниваем текст по левому краю */
-}
-
-/* Номер игрока */
-th:first-child {
-  text-align: center; /* Центрируем номер */
-}
-
-/* Рейтинг */
-th:nth-child(3) {
-  padding-left: 0px; /* Сдвигаем "Рейтинг" левее */
-  text-align: center; /* Центрируем текст */
-}
-
-/* Ячейки таблицы */
-td {
+th, td {
   padding: 12px;
   border-bottom: 1px solid #ddd;
   color: #333;
   font-size: 1rem;
-  vertical-align: middle; /* Выравниваем содержимое по вертикали по центру */
+  vertical-align: middle;
 }
 
-/* Номер игрока */
-td:first-child {
-  font-weight: bold; /* Делаем номер жирным */
-  text-align: center; /* Выравниваем по центру */
+th {
+  background-color: #6200ea;
+  color: white;
 }
 
-/* Контейнер для фотографии и имени */
 .player-info {
   display: flex;
   align-items: center;
 }
 
-/* Текст рядом с фотографией */
-.player-info span {
-  margin-top: 2px;
-}
-
-/* Фотографии игроков */
 .player-photo {
   width: 40px;
   height: 40px;
@@ -86,7 +56,6 @@ td:first-child {
   object-fit: cover;
 }
 
-/* Чередование цветов строк */
 tr:nth-child(even) {
   background-color: #f9f9f9;
 }
@@ -94,65 +63,25 @@ tr:nth-child(even) {
 /* Стили для кнопки "Добавить игру" */
 #add-game-button {
   display: inline-block;
-  background-color: #6200ea; /* Фиолетовый цвет, как в таблице */
+  background-color: #6200ea;
   color: white;
   border: none;
   padding: 10px 20px;
-  border-radius: 10px; /* Скругленные углы, как у таблицы */
+  border-radius: 10px;
   cursor: pointer;
   font-size: 1rem;
   text-align: center;
-  text-decoration: none; /* Убираем подчеркивание у ссылки */
+  text-decoration: none;
   margin-top: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень, как у таблицы */
-  transition: background-color 0.3s ease; /* Плавное изменение цвета при наведении */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
 
 #add-game-button:hover {
-  background-color: #3700b3; /* Темнее при наведении */
+  background-color: #3700b3;
 }
 
-/* Стили для мобильных устройств */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  th, td {
-    padding: 10px;
-    font-size: 0.9rem;
-  }
-
-  .player-photo {
-    width: 30px;
-    height: 30px;
-  }
-
-  #add-game-button {
-    width: 90%;
-    padding: 10px;
-  }
-/* Основные стили для страницы "Добавить игру" */
-body {
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-  margin: 0;
-  padding: 10px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 100vh;
-}
-
-h1 {
-  text-align: center;
-  color: #333;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-/* Контейнер для команд */
+/* Стили для страницы add-game.html */
 .teams-container {
   display: flex;
   justify-content: space-between;
@@ -161,7 +90,6 @@ h1 {
   gap: 20px;
 }
 
-/* Стили для каждой команды */
 .team {
   background: white;
   padding: 20px;
@@ -177,7 +105,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Кнопка добавления игрока */
 .add-player {
   width: 60px;
   height: 60px;
@@ -201,14 +128,12 @@ h1 {
   background-color: #3700b3;
 }
 
-/* Выбранные игроки */
 .selected-players {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-/* Стили для модального окна */
 .modal {
   display: none;
   position: fixed;
@@ -236,7 +161,6 @@ h1 {
   cursor: pointer;
 }
 
-/* Список игроков в модальном окне */
 .players-list {
   display: flex;
   flex-wrap: wrap;
@@ -272,5 +196,4 @@ h1 {
   .team {
     width: 100%;
   }
-}
 }
