@@ -47,7 +47,7 @@ th:first-child {
 
 /* Рейтинг */
 th:nth-child(3) {
-  padding-left: 90px; /* Сдвигаем "Рейтинг" левее */
+  padding-left: 0px; /* Сдвигаем "Рейтинг" левее */
   text-align: center; /* Центрируем текст */
 }
 
