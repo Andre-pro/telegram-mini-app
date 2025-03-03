@@ -33,11 +33,11 @@ table {
 
 /* Заголовки таблицы */
 th {
-  background-color: #6200ea;
+  background-color: #6200ea; /* Фиолетовый цвет */
   color: white;
   padding: 12px;
-  text-align: left;
   font-size: 1rem;
+  text-align: center; /* Центрируем текст в заголовках */
 }
 
 /* Ячейки таблицы */
@@ -46,7 +46,7 @@ td {
   border-bottom: 1px solid #ddd;
   color: #333;
   font-size: 1rem;
-  vertical-align: middle;
+  vertical-align: middle; /* Выравниваем содержимое по вертикали по центру */
 }
 
 /* Номер игрока */
