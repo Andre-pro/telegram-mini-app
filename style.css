@@ -132,4 +132,145 @@ tr:nth-child(even) {
     width: 90%;
     padding: 10px;
   }
+/* Основные стили для страницы "Добавить игру" */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  margin: 0;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Контейнер для команд */
+.teams-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  gap: 20px;
+}
+
+/* Стили для каждой команды */
+.team {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 48%;
+  text-align: center;
+}
+
+.team h2 {
+  color: #6200ea;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Кнопка добавления игрока */
+.add-player {
+  width: 60px;
+  height: 60px;
+  background-color: #6200ea;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 auto 20px;
+  transition: background-color 0.3s ease;
+}
+
+.add-player span {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.add-player:hover {
+  background-color: #3700b3;
+}
+
+/* Выбранные игроки */
+.selected-players {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Стили для модального окна */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Список игроков в модальном окне */
+.players-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.player-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.player-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.player-item span {
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .teams-container {
+    flex-direction: column;
+  }
+
+  .team {
+    width: 100%;
+  }
+}
 }
