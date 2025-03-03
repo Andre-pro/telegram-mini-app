@@ -236,12 +236,13 @@ tr:nth-child(even) {
 
 /* Стили для модального окна счета */
 #score-modal input[type="text"] {
-  width: 100%;
+  width: 80%;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
+  text-align: center;
 }
 
 .winner-options {
